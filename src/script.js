@@ -1,60 +1,71 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Form Submission
     const form = document.getElementById("test-form");
+    const modal = document.getElementById("modal");
+    const closeModalBtn = document.getElementById("close-modal");
+    const modalMessage = document.getElementById("modal-message");
+    const tableBody = document.querySelector("#data-table tbody");
+
+    function displayStoredData() {
+        const storedData = JSON.parse(localStorage.getItem('formData')) || [];
+        tableBody.innerHTML = '';
+        storedData.forEach((data) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${data.name}</td>
+                <td>${data.dropdown}</td>
+                <td>${data.checkbox ? "Checked" : "Not Checked"}</td>
+                <td><button class="delete-row">Remove</button></td>
+            `;
+            tableBody.appendChild(row);
+
+            row.querySelector(".delete-row").addEventListener("click", () => {
+                deleteRow(data);
+                row.remove();
+            });
+        });
+    }
+
+    function deleteRow(dataToDelete) {
+        let storedData = JSON.parse(localStorage.getItem('formData')) || [];
+        storedData = storedData.filter(data => data.name !== dataToDelete.name || data.dropdown !== dataToDelete.dropdown);
+        localStorage.setItem('formData', JSON.stringify(storedData));
+    }
+
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         const name = document.getElementById("name").value;
         const dropdown = document.getElementById("dropdown").value;
         const checkbox = document.getElementById("checkbox").checked;
 
+        if (!name || !dropdown) {
+            modalMessage.textContent = "Please fill in all required fields.";
+            modal.classList.remove("hidden");
+            return;
+        }
+
+        const newData = { name, dropdown, checkbox };
+
+        const storedData = JSON.parse(localStorage.getItem('formData')) || [];
+        storedData.push(newData);
+        localStorage.setItem('formData', JSON.stringify(storedData));
+
+        displayStoredData();
+
+        form.reset();
+
         alert(`Form Submitted!\nName: ${name}\nDropdown: ${dropdown}\nCheckbox: ${checkbox}`);
     });
 
-    // Dynamic Table Row Addition
-    const addRowBtn = document.getElementById("add-row");
-    const tableBody = document.querySelector("#data-table tbody");
-
-    addRowBtn.addEventListener("click", () => {
-        const row = document.createElement("tr");
-
-        row.innerHTML = `
-            <td>Test User</td>
-            <td>Option 1</td>
-            <td><button class="delete-row">Remove</button></td>
-        `;
-
-        tableBody.appendChild(row);
-
-        // Add event listener for delete button
-        row.querySelector(".delete-row").addEventListener("click", () => {
-            row.remove();
-        });
-    });
-
-    // Modal Open/Close
     const openModalBtn = document.getElementById("open-modal");
-    const closeModalBtn = document.getElementById("close-modal");
-    const modal = document.getElementById("modal");
 
     openModalBtn.addEventListener("click", () => {
-        console.log("Opening modal...");
+        modalMessage.textContent = "This is a test modal.";
         modal.classList.remove("hidden");
     });
 
     closeModalBtn.addEventListener("click", () => {
-        console.log("Closing modal...");
         modal.classList.add("hidden");
     });
 
-    // Simulated Test Execution
-    const runTestsBtn = document.getElementById("run-tests");
-    const testResult = document.getElementById("test-result");
-
-    runTestsBtn.addEventListener("click", () => {
-        testResult.textContent = "Running tests...";
-
-        setTimeout(() => {
-            testResult.textContent = "✅ All tests passed successfully!";
-        }, 2000);
-    });
+    displayStoredData();
 });

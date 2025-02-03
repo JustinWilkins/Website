@@ -13,6 +13,12 @@ body {
     flex-direction: column;
 }
 
+/* Wrapper for Centered Content */
+.wrapper {
+    max-width: 1200px;
+    padding: 20px;
+}
+
 html,
 body {
     height: 100%;
@@ -32,9 +38,18 @@ header {
     color: white;
     padding: 20px 0;
     text-align: center;
+    border-bottom: 10px solid #36d666;
+    border-top: 10px solid #36d666;
+    padding-bottom: 0px;
+    padding-top: 0px;
 }
 
 header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header h2 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
@@ -61,26 +76,29 @@ header nav a:hover {
 }
 
 .section {
-    padding: 60px 0;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 20px;
+    background-color: rgb(199, 194, 194);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    width: 0vw;
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
-.bg-light {
-    background-color: #f9f9f9;
-}
-
 .container {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 }
 
-/* Contact Section */
 #contact a {
-    color: #ffd700;
+    color: #ad4120;
     text-decoration: none;
 }
 
-/* Footer Styling */
 footer {
     text-align: center;
     padding: 10px;
@@ -111,6 +129,120 @@ footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+.btn.primary {
+    padding: 4px 12px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #969b95;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.btn.primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button.btn.primary:active {
+    transform: translateY(0);
+    background-color: #003d80;
+}
+
+.btn.secondary {
+    background-color: #6c757d;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn.secondary:hover {
+    background-color: #5a6268;
+    /* Darker gray on hover */
+}
+
+.btn.secondary {
+    background-color: #6c757d;
+    color: white;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn.secondary:hover {
+    background-color: #5a6268;
+    /* Darker gray on hover */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Ensures borders collapse into a single line */
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional shadow for a more polished look */
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    /* Light grey border */
+}
+
+th {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* Stripes for better readability */
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+    /* Light grey background on hover */
+}
+
+.test-section {
+    margin-bottom: 30px;
+    margin-right: 700px;
+    padding: 20px;
+    background-color: rgb(199, 194, 194);
+    border-radius: 8px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+    display: inline-table;
+    align-items: left;
+    justify-content: left;
+}
+
+.contact-section {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.home-section {
+    padding: 20px;
+}
+
+.results-section {
+    padding: 20px;
+}
+
 /* Responsive Styling */
 @media (max-width: 768px) {
     .skills-grid {
@@ -119,5 +251,10 @@ footer {
 
     .container {
         width: 90%;
+    }
+
+    header {
+        font-size: 28px;
+        padding: 20px 15px;
     }
 }

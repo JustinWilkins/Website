@@ -21,7 +21,8 @@
         </div>
     </header>
 
-    <main>
+    <main class="wrapper">
+
         <section class="test-section">
             <h2>Form Elements</h2>
             <form id="test-form">
@@ -33,9 +34,9 @@
                 <div class="form-group">
                     <label for="dropdown">Choose an option:</label>
                     <select id="dropdown">
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option>
+                        <option value="Option1">Option 1</option>
+                        <option value="Option2">Option 2</option>
+                        <option value="Option3">Option 3</option>
                     </select>
                 </div>
 
@@ -45,7 +46,7 @@
                     </label>
                 </div>
 
-                <button type="submit">Submit</button>
+                <button class="btn primary" type="submit">Submit</button>
             </form>
         </section>
 
@@ -55,38 +56,34 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Option</th>
+                        <th>Dropdown</th>
+                        <th>Checkbox</th>
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                </tbody>
             </table>
-            <button id="add-row">Add Row</button>
         </section>
 
         <section class="test-section">
             <h2>Modal Popup</h2>
 
-            <button id="open-modal">Open Modal</button>
+            <button class="btn primary" id="open-modal">Open Modal</button>
 
             <div id="modal" class="modal-container hidden">
                 <div class="modal-content">
-                    <p>This is a test modal.</p>
-                    <button id="close-modal">Close</button>
+                    <p id="modal-message">Justin was here.</p>
+                    <button class="btn secondary" id="close-modal">Close</button>
                 </div>
             </div>
 
         </section>
 
-        <section class="test-section">
-            <h2>Test Execution</h2>
-            <button id="run-tests">Run Tests</button>
-            <p id="test-result"></p>
-        </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Justin Wilkins. All Rights Reserved.</p>
+        <p>&copy; 2025 Justin Wilkins.</p>
     </footer>
 </body>
 
