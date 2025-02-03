@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Test Playground</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Justin Wilkins</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="testPlayground.html">Testing Playground</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="test-section">
+            <h2>Form Elements</h2>
+            <form id="test-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="dropdown">Choose an option:</label>
+                    <select id="dropdown">
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="checkbox"> Check me
+                    </label>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section class="test-section">
+            <h2>Dynamic Table</h2>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Option</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button id="add-row">Add Row</button>
+        </section>
+
+        <section class="test-section">
+            <h2>Modal Popup</h2>
+
+            <button id="open-modal">Open Modal</button>
+
+            <div id="modal" class="modal-container hidden">
+                <div class="modal-content">
+                    <p>This is a test modal.</p>
+                    <button id="close-modal">Close</button>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="test-section">
+            <h2>Test Execution</h2>
+            <button id="run-tests">Run Tests</button>
+            <p id="test-result"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Justin Wilkins. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
