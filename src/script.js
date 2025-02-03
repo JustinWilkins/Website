@@ -52,8 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
         displayStoredData();
 
         form.reset();
-
-        alert(`Form Submitted!\nName: ${name}\nDropdown: ${dropdown}\nCheckbox: ${checkbox}`);
     });
 
     const openModalBtn = document.getElementById("open-modal");

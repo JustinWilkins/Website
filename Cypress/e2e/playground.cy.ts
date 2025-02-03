@@ -12,5 +12,13 @@ describe('Cypress Tests', () => {
             .and('not.be.empty');
     });
 
+    it('Should add a row to the table if form is submitted successfully', () => {
+        cy.get('input[name="name"]').type("Justin Wilkins");
+        cy.get('button[type="submit"]').click();
+
+
+
+    });
+
 
 });

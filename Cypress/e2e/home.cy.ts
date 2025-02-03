@@ -20,7 +20,7 @@ describe('Home Tests', () => {
             .should('contain', 'Justin Wilkins');
     });
 
-    it('Should have a welcome message', () => {
+    it('Should have a welcome section', () => {
         cy.get('.home-section')
             .should('have.length', 1)
             .should('contain', 'Welcome');
