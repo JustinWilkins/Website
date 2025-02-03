@@ -20,7 +20,7 @@ jobs:
         run: npx cypress run --config baseUrl=https://justin-wilkins.netlify.app
 
       - name: Upload Cypress Test Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cypress-results
           path: cypress/results
