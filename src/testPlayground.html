@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automation Test Playground</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <script defer src="testing-playground.js"></script>
 </head>
 
 <body>
@@ -16,6 +16,7 @@
             <nav>
                 <a href="index.html">Home</a>
                 <a href="testPlayground.html">Testing Playground</a>
+                <a href="resultsDashboard.html">Results Dashboard</a>
                 <a href="contact.html">Contact</a>
             </nav>
         </div>
@@ -23,12 +24,19 @@
 
     <main class="wrapper">
 
+        <section id="PlaceHolder" class="playground-section">
+            <div class="container">
+                <h2>Testing</h2>
+                <p>Testing 1,2... Get it? Anyway this page is all the different types of elements that I test.
+                </p>
+        </section>
+
         <section class="test-section">
             <h2>Form Elements</h2>
             <form id="test-form">
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name">
+                    <input type="text" id="name" name="name" title="Enter your full name">
                 </div>
 
                 <div class="form-group">
@@ -48,6 +56,9 @@
 
                 <button class="btn primary" type="submit">Submit</button>
             </form>
+
+            <div class="toast hidden" id="toast">Form Submitted Successfully!</div>
+
         </section>
 
         <section class="test-section">
@@ -58,12 +69,50 @@
                         <th>Name</th>
                         <th>Dropdown</th>
                         <th>Checkbox</th>
-                        <th>Action</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
+        </section>
+
+        <section class="test-section">
+            <h2>Accordion</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">Item 1</button>
+                    <div class="accordion-body">
+                        <p>This is the content of item 1.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Item 2</button>
+                    <div class="accordion-body">
+                        <p>This is the content of item 2.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="test-section">
+            <h2>Progress Bar</h2>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <button class="btn primary" id="update-progress">Update Progress</button>
+        </section>
+
+        <section class="test-section">
+            <h2>Drag-and-Drop</h2>
+            <div class="drag-container">
+                <div id="drag-item" class="draggable" draggable="true">
+                    Drag Me
+                </div>
+                <div id="drop-zone" class="drop-container">
+                    Drop Here
+                </div>
+            </div>
         </section>
 
         <section class="test-section">
@@ -82,7 +131,7 @@
 
     </main>
 
-    <footer>
+    <footer class="footer">
         <p>&copy; 2025 Justin Wilkins.</p>
     </footer>
 </body>

@@ -1,69 +1,68 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("test-form");
-    const modal = document.getElementById("modal");
-    const closeModalBtn = document.getElementById("close-modal");
-    const modalMessage = document.getElementById("modal-message");
-    const tableBody = document.querySelector("#data-table tbody");
+document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll(".slide");
+    const prevButton = document.getElementById("prevBtn");
+    const nextButton = document.getElementById("nextBtn");
 
-    function displayStoredData() {
-        const storedData = JSON.parse(localStorage.getItem('formData')) || [];
-        tableBody.innerHTML = '';
-        storedData.forEach((data) => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${data.name}</td>
-                <td>${data.dropdown}</td>
-                <td>${data.checkbox ? "Checked" : "Not Checked"}</td>
-                <td><button class="delete-row">Remove</button></td>
-            `;
-            tableBody.appendChild(row);
+    console.log("Script Loaded");
 
-            row.querySelector(".delete-row").addEventListener("click", () => {
-                deleteRow(data);
-                row.remove();
-            });
-        });
-    }
+    let currentSlide = parseInt(localStorage.getItem("currentSlide")) || 0;
 
-    function deleteRow(dataToDelete) {
-        let storedData = JSON.parse(localStorage.getItem('formData')) || [];
-        storedData = storedData.filter(data => data.name !== dataToDelete.name || data.dropdown !== dataToDelete.dropdown);
-        localStorage.setItem('formData', JSON.stringify(storedData));
-    }
-
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const name = document.getElementById("name").value;
-        const dropdown = document.getElementById("dropdown").value;
-        const checkbox = document.getElementById("checkbox").checked;
-
-        if (!name || !dropdown) {
-            modalMessage.textContent = "Please fill in all required fields.";
-            modal.classList.remove("hidden");
-            return;
+    function showSlide(index) {
+        if (index >= slides.length) {
+            currentSlide = 0;
+        } else if (index < 0) {
+            currentSlide = slides.length - 1;
+        } else {
+            currentSlide = index;
         }
 
-        const newData = { name, dropdown, checkbox };
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === currentSlide);
+        });
 
-        const storedData = JSON.parse(localStorage.getItem('formData')) || [];
-        storedData.push(newData);
-        localStorage.setItem('formData', JSON.stringify(storedData));
+        localStorage.setItem("currentSlide", currentSlide);
+    }
 
-        displayStoredData();
+    prevButton.addEventListener("click", () => showSlide(currentSlide - 1));
+    nextButton.addEventListener("click", () => showSlide(currentSlide + 1));
 
-        form.reset();
+    const parentAccordions = document.querySelectorAll(".accordion-item > .accordion-header");
+    const nestedAccordions = document.querySelectorAll(".nested-accordion .accordion-header");
+
+    // Hide nested accordion content initially
+    nestedAccordions.forEach(nestedAccordion => {
+        const nestedBody = nestedAccordion.nextElementSibling;
+        if (nestedBody) {
+            nestedBody.style.display = "none";
+        }
     });
 
-    const openModalBtn = document.getElementById("open-modal");
+    document.querySelectorAll(".accordion-header").forEach(header => {
+        header.addEventListener("click", function (event) {
+            const item = this.closest(".accordion-item");
+            const body = item.querySelector(".accordion-content");
 
-    openModalBtn.addEventListener("click", () => {
-        modalMessage.textContent = "This is a test modal.";
-        modal.classList.remove("hidden");
+            // If this is a nested accordion, prevent event bubbling
+            if (item.closest(".nested-accordion")) {
+                console.log("Clicked nested:", this.textContent.trim());
+                event.stopPropagation(); // Prevent parent from detecting this click
+            } else {
+                console.log("Clicked parent:", this.textContent.trim());
+            }
+
+            // Toggle accordion
+            const isActive = item.classList.toggle("active");
+            body.style.display = isActive ? "block" : "none";
+
+            // If it's a parent, close all nested accordions when closing
+            if (!item.closest(".nested-accordion") && !isActive) {
+                item.querySelectorAll(".nested-accordion .accordion-content").forEach(nestedBody => {
+                    nestedBody.style.display = "none";
+                    nestedBody.closest(".accordion-item").classList.remove("active");
+                });
+            }
+        });
     });
 
-    closeModalBtn.addEventListener("click", () => {
-        modal.classList.add("hidden");
-    });
-
-    displayStoredData();
+    showSlide(currentSlide);
 });
