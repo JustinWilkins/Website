@@ -28,9 +28,7 @@ jobs:
 
       - name: Upload Test Results to Netlify
         run: |
-          curl -X POST -F "file=@cypress/results/test-results.json" https://api.netlify.com/api/v1/sites/YOUR_NETLIFY_SITE_ID/deploys --header "Authorization: Bearer YOUR_NETLIFY_API_KEY"
-        env:
-          NETLIFY_API_KEY: ${{ secrets.NETLIFY_API_KEY }}
+          curl -X POST -F "file=@cypress/results/test-results.json" https://api.netlify.com/api/v1/sites/${{ secrets.NETLIFY_SITE_ID }}/deploys --header "Authorization: Bearer ${{ secrets.NETLIFY_API_KEY }}"
           
   deploy:
     runs-on: ubuntu-latest
