@@ -9,7 +9,9 @@
             "cypress"
         ],
         "moduleResolution": "node",
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "baseUrl": "./",
+        "allowJs": true,
     },
     "include": [
         "cypress/**/*.ts"
