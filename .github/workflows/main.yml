@@ -17,21 +17,20 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Verify Cypress Installation
-        run: npx cypress verify
+      - name: Ensure results directory exists
+        run: mkdir -p cypress/results
 
-      - name: Run Cypress Tests with verbose logging
-        run: |
-          npx cypress run --config baseUrl=https://justin-wilkins.netlify.app --reporter json --reporter-options output=cypress/results/test-results.json
+      - name: Run Cypress Tests
+        run: npx cypress run --config baseUrl=https://justin-wilkins.netlify.app
         continue-on-error: true
 
       - name: Generate Test Results JSON
         run: |
-          mkdir -p cypress/results
-          ls -la cypress
           npx cypress run --reporter json --reporter-options output=cypress/results/test-results.json
-          ls -la cypress/results
         continue-on-error: true
+
+      - name: List files in the results folder
+        run: ls -al cypress/results
 
       - name: Upload Test Results to Netlify
         run: |
