@@ -17,11 +17,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Ensure results directory exists
-        run: mkdir -p cypress/results
-
       - name: Run Cypress Tests
-        run: npx cypress run --config baseUrl=https://justin-wilkins.netlify.app --reporter json --reporter-options output=cypress/results/test-results.json
+        run: npx cypress run --config baseUrl=https://justin-wilkins.netlify.app
         continue-on-error: true
 
       - name: Upload Test Results to Netlify
@@ -37,9 +34,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Deploy to Netlify
+      - name: Deploy test results to Netlify
         run: |
-          npm install -g netlify-cli
-          netlify deploy --prod --dir=public # Path to your public directory
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          if [ -f cypress/results/test-results.json ]; then
+            curl -X POST -F "file=@cypress/results/test-results.json" \
+            https://api.netlify.com/api/v1/sites/YOUR_SITE_ID/deploys \
+            --header "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}"
+          else
+            echo "test-results.json not found. Skipping upload."
+          fi
+
+
+          
