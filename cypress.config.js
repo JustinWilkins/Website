@@ -4,7 +4,7 @@ module.exports = defineConfig({
   e2e: {
     reporter: 'spec',
     reporterOptions: {
-      output: 'cypress/results/test-results.json',
+      output: 'results/.test-results.json',
     },
     baseUrl: 'https://justin-wilkins.netlify.app',
     supportFile: false,
@@ -13,7 +13,7 @@ module.exports = defineConfig({
       on('after:run', (results) => {
         try {
           const fs = require('fs');
-          fs.writeFileSync('cypress/results/test-results.json', JSON.stringify(results, null, 2));
+          fs.writeFileSync('results/test-results.json', JSON.stringify(results, null, 2));
         } catch (error) {
           console.error('Error writing results:', error);
         }
