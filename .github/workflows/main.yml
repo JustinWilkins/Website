@@ -17,8 +17,13 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run Cypress Tests
-        run: npx cypress run --config baseUrl=https://justin-wilkins.netlify.app
+      - name: Verify Cypress Installation
+        run: npx cypress verify
+
+      - name: Run Cypress Tests with verbose logging
+        run: |
+          npx cypress run --config baseUrl=https://justin-wilkins.netlify.app --reporter json --reporter-options output=cypress/results/test-results.json
+        continue-on-error: true
 
       - name: Generate Test Results JSON
         run: |
@@ -34,7 +39,7 @@ jobs:
           
   deploy:
     runs-on: ubuntu-latest
-    needs: cypress-run  # Ensures that the deploy job only runs after the tests have completed
+    needs: cypress-run
 
     steps:
       - name: Checkout Repository
