@@ -21,16 +21,8 @@ jobs:
         run: mkdir -p cypress/results
 
       - name: Run Cypress Tests
-        run: npx cypress run --config baseUrl=https://justin-wilkins.netlify.app
+        run: npx cypress run --config baseUrl=https://justin-wilkins.netlify.app --reporter json --reporter-options output=cypress/results/test-results.json
         continue-on-error: true
-
-      - name: Generate Test Results JSON
-        run: |
-          npx cypress run --reporter json --reporter-options output=cypress/results/test-results.json
-        continue-on-error: true
-
-      - name: List files in the results folder
-        run: ls -al cypress/results
 
       - name: Upload Test Results to Netlify
         run: |
