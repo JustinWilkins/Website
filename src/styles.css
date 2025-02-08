@@ -238,18 +238,18 @@ tr:hover {
 }
 
 .test-section {
-    margin-bottom: 30px;
-    margin-right: 700px;
-    padding: 20px;
+    padding: 40px;
+    max-width: 1200px;
     background-color: rgb(199, 194, 194);
-    border-radius: 8px;
     box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
-    align-items: left;
-    justify-content: left;
+    margin: 0 auto;
+    border-bottom: 10px dotted #aaaaaa;
 }
 
 .contact-section {
+    max-width: 1200px;
     padding: 20px;
+    margin: 0 auto;
 }
 
 .home-section {
@@ -259,11 +259,15 @@ tr:hover {
 }
 
 .results-section {
+    max-width: 1200px;
     padding: 20px;
+    margin: 0 auto;
 }
 
-.playground-section {
-    padding: 0px;
+.playground-header-section {
+    max-width: 1200px;
+    padding: 20px;
+    margin: 0 auto;
 }
 
 
@@ -282,19 +286,15 @@ tr:hover {
     transition: width 0.5s ease-in-out;
 }
 
-/* Toast notification styles */
 .toast {
-    position: flex;
-    bottom: 20px;
+    position: sticky;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #333;
+    background-color: #25a5d8;
     color: #fff;
     padding: 10px;
-    border-radius: 5px;
-    display: inline;
-    align-content: right;
-    z-index: 1000;
+    border-radius: 20px;
+    display: inline-block;
 }
 
 .toast.hidden {
@@ -383,6 +383,11 @@ tr:hover {
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+p {
+    margin-left: 20px;
+}
+
 
 /* Responsive Styling */
 @media (max-width: 768px) {

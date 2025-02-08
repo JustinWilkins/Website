@@ -1,16 +1,11 @@
 describe('Cypress Tests', () => {
     beforeEach(() => {
-        cy.visit('https://justin-wilkins.netlify.app');
+        cy.visit('https://justin-wilkins.netlify.app/testplayground');
     });
 
     it('Should load the page', () => {
         cy.get('h1').should('be.visible');
         cy.get('nav').should('exist');
-        cy.get('a').should('have.length', 3)
-            .first()
-            .should('have.attr', 'href')
-            .and('not.be.empty');
     });
-
 
 });
