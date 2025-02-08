@@ -36,13 +36,12 @@ jobs:
 
       - name: Deploy test results to Netlify
         run: |
-          if [ -f cypress/results/test-results.json ]; then
-            curl -X POST -F "file=@cypress/results/test-results.json" \
+          if [ -f results/test-results.json ]; then
+            echo "test-results.json found. Uploading to Netlify..."
+            curl -X POST -F "file=results/test-results.json" \
             https://api.netlify.com/api/v1/sites/YOUR_SITE_ID/deploys \
             --header "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}"
           else
             echo "test-results.json not found. Skipping upload."
+            exit 1
           fi
-
-
-          
