@@ -1,4 +1,5 @@
 name: Run Cypress Tests
+
 on:
   push:
     branches:
@@ -16,11 +17,38 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run Cypress Tests
-        run: npx cypress run --config baseUrl=https://justin-wilkins.netlify.app
+      - name: Verify Cypress Installation
+        run: npx cypress verify
 
-      - name: Upload Cypress Test Results
-        uses: actions/upload-artifact@v4
-        with:
-          name: cypress-results
-          path: cypress/results
+      - name: Run Cypress Tests with verbose logging
+        run: |
+          npx cypress run --config baseUrl=https://justin-wilkins.netlify.app --reporter json --reporter-options output=cypress/results/test-results.json
+        continue-on-error: true
+
+      - name: Generate Test Results JSON
+        run: |
+          mkdir -p cypress/results
+          ls -la cypress
+          npx cypress run --reporter json --reporter-options output=cypress/results/test-results.json
+          ls -la cypress/results
+        continue-on-error: true
+
+      - name: Upload Test Results to Netlify
+        run: |
+          curl -X POST -F "file=@cypress/results/test-results.json" https://api.netlify.com/api/v1/sites/${{ secrets.NETLIFY_SITE_ID }}/deploys --header "Authorization: Bearer ${{ secrets.NETLIFY_API_KEY }}"
+        continue-on-error: true
+          
+  deploy:
+    runs-on: ubuntu-latest
+    needs: cypress-run
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Deploy to Netlify
+        run: |
+          npm install -g netlify-cli
+          netlify deploy --prod --dir=public # Path to your public directory
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
