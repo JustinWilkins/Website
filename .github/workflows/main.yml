@@ -23,8 +23,10 @@ jobs:
       - name: Generate Test Results JSON
         run: |
           mkdir -p cypress/results
+          ls -la cypress # Check if the folder was created
           # Generate your JSON file from Cypress results
           npx cypress run --reporter json --reporter-options output=cypress/results/test-results.json
+          ls -la cypress/results # Check the contents of the 'results' folder
 
       - name: Upload Test Results to Netlify
         run: |
