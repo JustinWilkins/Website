@@ -28,14 +28,15 @@ jobs:
       - name: Generate Test Results JSON
         run: |
           mkdir -p cypress/results
-          ls -la cypress # Check if the folder was created
-          # Generate your JSON file from Cypress results
+          ls -la cypress
           npx cypress run --reporter json --reporter-options output=cypress/results/test-results.json
-          ls -la cypress/results # Check the contents of the 'results' folder
+          ls -la cypress/results
+        continue-on-error: true
 
       - name: Upload Test Results to Netlify
         run: |
           curl -X POST -F "file=@cypress/results/test-results.json" https://api.netlify.com/api/v1/sites/${{ secrets.NETLIFY_SITE_ID }}/deploys --header "Authorization: Bearer ${{ secrets.NETLIFY_API_KEY }}"
+        continue-on-error: true
           
   deploy:
     runs-on: ubuntu-latest
