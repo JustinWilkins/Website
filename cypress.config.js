@@ -4,7 +4,7 @@ module.exports = defineConfig({
   e2e: {
     reporter: "mochawesome",
     reporterOptions: {
-      reportDir: "html-report",
+      reportDir: "src/html-report",
       overwrite: true,
       html: false,
       json: true,
