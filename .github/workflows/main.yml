@@ -27,12 +27,12 @@ jobs:
         npm run test --reporter mochawesome --reporter-options reportDir=src/html-report,reportFilename=mochawesome.json
       continue-on-error: true
 
-
+    - name: Print Cypress logs
+      run: |
+        cat cypress/results/*.json || echo "No results found"
 
     - name: List contents after test run
       run: ls -l src/html-report/
-
-      
 
     - name: Ensure mochawesome.json exists
       run: ls -l src/html-report/ || echo "Mochawesome report directory not found"
