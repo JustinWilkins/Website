@@ -35,8 +35,11 @@ jobs:
         git config --global user.name "GitHub Actions"
         # Stage all changes, including modified and untracked files
         git add -A
+        # Commit the changes
         git commit -m "Add Mochawesome report"
-        # Push the changes to the repository
-        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/JustinWilkins/Website.git origin main
+        # Ensure we're on the correct branch (main)
+        git checkout main
+        # Push the changes to the remote repository
+        git push origin main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
