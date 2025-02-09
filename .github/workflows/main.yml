@@ -1,0 +1,40 @@
+name: Run Cypress Tests and Update Website with Mochawesome Report
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Git configuration
+      run: |
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "GitHub Actions"
+        
+    - name: Install dependencies and run tests
+      run: |
+        npm install
+        npm run test --reporter mochawesome --reporter-options reportDir=src/html-report,reportFilename=mochawesome.html
+      continue-on-error: true
+        
+    - name: Check if the report files were generated
+      run: |
+        echo "Checking src/html-report folder after tests..."
+        ls -al src/html-report/
+        
+    - name: Stage and commit mochawesome report
+      run: |
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "GitHub Actions"
+        git add -f src/html-report/mochawesome.json
+        git commit --amend --no-edit -m "Add Mochawesome report"
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/JustinWilkins/Website.git HEAD:main --force
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

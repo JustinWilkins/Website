@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Automation Test Playground</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts/testing-playground.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Justin Wilkins</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="testPlayground.html">Testing Playground</a>
+                <a href="resultsDashboard.html">Results Dashboard</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="PlaceHolder" class="playground-header-section">
+        <div class="container">
+            <h2>Testing</h2>
+            <p>This page is all the different types of elements that I have tested throughout my carrer. Feel free to
+                mess around with them data is stored locally so it won't mess up any tests currently running. If you
+                find a bug, or think of any ideas that I could add to this page let me know and contact me!
+            </p>
+    </section>
+
+    <main>
+
+        <section class="test-section">
+            <h2>Form Submission</h2>
+            <form id="test-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" title="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="dropdown">Choose an option:</label>
+                    <select id="dropdown">
+                        <option value="Option1">Option 1</option>
+                        <option value="Option2">Option 2</option>
+                        <option value="Option3">Option 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="checkbox"> Check me
+                    </label>
+                </div>
+
+                <button class="btn primary" type="submit">Submit</button>
+            </form>
+
+            <div class="toast hidden" id="toast">Form Submitted Successfully!</div>
+
+        </section>
+
+        <section class="test-section">
+            <h2>Dynamic Table</h2>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Dropdown</th>
+                        <th>Checkbox</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="test-section">
+            <h2>Accordion</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">Item 1</button>
+                    <div class="accordion-body">
+                        <p>This is the content of item 1.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Item 2</button>
+                    <div class="accordion-body">
+                        <p>This is the content of item 2.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="test-section">
+            <h2>Progress Bar</h2>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <button class="btn primary" id="update-progress">Update Progress</button>
+        </section>
+
+        <section class="test-section">
+            <h2>Drag-and-Drop</h2>
+            <div class="drag-container">
+                <div id="drag-item" class="draggable" draggable="true">
+                    Drag Me
+                </div>
+                <div id="drop-zone" class="drop-container">
+                    Drop Here
+                </div>
+            </div>
+        </section>
+
+        <section class="test-section">
+            <h2>Modal Popup</h2>
+
+            <button class="btn primary" id="open-modal">Open Modal</button>
+
+            <div id="modal" class="modal-container hidden">
+                <div class="modal-content">
+                    <p id="modal-message">Justin was here.</p>
+                    <button class="btn secondary" id="close-modal">Close</button>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Justin Wilkins.</p>
+    </footer>
+</body>
+
+</html>
