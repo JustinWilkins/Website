@@ -20,15 +20,15 @@ jobs:
 
     - name: Clear cache before test run
       run: rm -rf node_modules/.cache
+
+    - name: Remove old Mochawesome reports
+      run: rm -rf src/html-report/*
         
     - name: Install dependencies and run tests
       run: |
         npm install
         npm run test --reporter mochawesome --reporter-options reportDir=src/html-report,reportFilename=mochawesome.html
       continue-on-error: true
-
-    - name: Check mochawesome.json contents before commit
-      run: cat src/html-report/mochawesome.json
 
     - name: Check if the report files were generated
       run: |
