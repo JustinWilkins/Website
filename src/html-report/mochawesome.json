@@ -1,14 +1,14 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 2,
-    "passes": 1,
+    "tests": 4,
+    "passes": 2,
     "pending": 0,
-    "failures": 1,
-    "start": "2025-02-09T04:23:06.301Z",
-    "end": "2025-02-09T04:23:11.013Z",
-    "duration": 4712,
-    "testsRegistered": 2,
+    "failures": 2,
+    "start": "2025-02-09T04:51:52.149Z",
+    "end": "2025-02-09T04:52:01.539Z",
+    "duration": 9390,
+    "testsRegistered": 4,
     "passPercent": 50,
     "pendingPercent": 0,
     "other": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "a7d4fc82-65cf-4541-bed8-419a0aac16e3",
+      "uuid": "7c3ee7fa-bb5f-434a-874f-4e5ddd863d33",
       "title": "",
       "fullFile": "cypress/e2e/main.cy.ts",
       "file": "cypress/e2e/main.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "4ebf4419-9be1-4168-880f-a20c59054614",
+          "uuid": "959f821f-2d28-4d78-8637-9a1466efb666",
           "title": "Cypress Tests",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Should load the page",
               "fullTitle": "Cypress Tests Should load the page",
               "timedOut": null,
-              "duration": 394,
+              "duration": 427,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,48 @@
               "context": null,
               "code": "cy.get('h1').should('be.visible');\ncy.get('nav').should('exist');",
               "err": {},
-              "uuid": "82304193-92df-4593-8c8d-41f20bc75614",
-              "parentUUID": "4ebf4419-9be1-4168-880f-a20c59054614",
+              "uuid": "d1cb7a9d-c201-4522-9b01-a603f9857ebf",
+              "parentUUID": "959f821f-2d28-4d78-8637-9a1466efb666",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should input a row on the dynamic table",
+              "fullTitle": "Cypress Tests Should input a row on the dynamic table",
+              "timedOut": null,
+              "duration": 403,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('input[name=\"name\"]').type(\"Testing\");\ncy.get('button[type=\"submit\"]').click();\ncy.get('div[class=\"toast\"]').should('be.visible');\ncy.get('tr').should('be.visible');",
+              "err": {},
+              "uuid": "db374448-2d71-4d7e-b759-61f57e4616f0",
+              "parentUUID": "959f821f-2d28-4d78-8637-9a1466efb666",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should display accordion content when accordion header is clicked",
+              "fullTitle": "Cypress Tests Should display accordion content when accordion header is clicked",
+              "timedOut": null,
+              "duration": 4302,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('button[class=\"accordion-header\"]').contains(\"Item 1\").click();\ncy.get('div[class=\"accordion-content\"]').should('be.visible').contains(\"This is the content of Item 1.\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'This is the content of Item 1.' within the element: <div.accordion-content> but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'This is the content of Item 1.' within the element: <div.accordion-content> but never did.\n    at Context.eval (webpack://your-project-name/./cypress/e2e/main.cy.ts:17:0)",
+                "diff": null
+              },
+              "uuid": "4a20518a-c9f8-4daa-bb76-8252db383af8",
+              "parentUUID": "959f821f-2d28-4d78-8637-9a1466efb666",
               "isHook": false,
               "skipped": false
             },
@@ -56,35 +96,37 @@
               "title": "Should fail",
               "fullTitle": "Cypress Tests Should fail",
               "timedOut": null,
-              "duration": 4283,
+              "duration": 4140,
               "state": "failed",
               "speed": null,
               "pass": false,
               "fail": true,
               "pending": false,
               "context": null,
-              "code": "cy.get('YoMomma');",
+              "code": "cy.get('Fail');",
               "err": {
-                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `YoMomma`, but never found it.",
-                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `YoMomma`, but never found it.\n    at Context.eval (webpack://your-project-name/./cypress/e2e/main.cy.ts:10:0)",
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `Fail`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `Fail`, but never found it.\n    at Context.eval (webpack://your-project-name/./cypress/e2e/main.cy.ts:20:0)",
                 "diff": null
               },
-              "uuid": "fce72917-0499-4302-a850-306de1203607",
-              "parentUUID": "4ebf4419-9be1-4168-880f-a20c59054614",
+              "uuid": "389fb46f-4226-4573-988a-5796e51c5ccb",
+              "parentUUID": "959f821f-2d28-4d78-8637-9a1466efb666",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "82304193-92df-4593-8c8d-41f20bc75614"
+            "d1cb7a9d-c201-4522-9b01-a603f9857ebf",
+            "db374448-2d71-4d7e-b759-61f57e4616f0"
           ],
           "failures": [
-            "fce72917-0499-4302-a850-306de1203607"
+            "4a20518a-c9f8-4daa-bb76-8252db383af8",
+            "389fb46f-4226-4573-988a-5796e51c5ccb"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 4677,
+          "duration": 9272,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
