@@ -24,11 +24,25 @@ jobs:
     - name: Remove old Mochawesome reports
       run: rm -rf src/html-report/* || echo "No reports to remove"
 
+
+    - name: List contents before test run
+      run: ls -l src/html-report/
+      
+
+
+
     - name: Install dependencies and run tests
       run: |
         npm install
         npm run test --reporter mochawesome --reporter-options reportDir=src/html-report,reportFilename=mochawesome.json
       continue-on-error: true
+
+
+
+    - name: List contents after test run
+      run: ls -l src/html-report/
+
+      
 
     - name: Ensure mochawesome.json exists
       run: ls -l src/html-report/ || echo "Mochawesome report directory not found"
