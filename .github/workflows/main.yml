@@ -30,6 +30,13 @@ jobs:
         npm run test --reporter mochawesome --reporter-options reportDir=src/html-report,reportFilename=mochawesome.json
       continue-on-error: true
 
+
+    - name: Set GitHub Actions Bot as Committer
+      run: git config --global user.email "github-actions[bot]@users.noreply.github.com"
+    
+    - name: Set GitHub Actions Bot Name
+      run: git config --global user.name "github-actions[bot]"
+    
     - name: Stash local changes
       run: git stash --include-untracked
     
@@ -47,6 +54,8 @@ jobs:
     
     - name: Push changes
       run: git push origin main
+
+
         
     - name: Stage and commit mochawesome report
       run: |
