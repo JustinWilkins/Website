@@ -1,4 +1,5 @@
 describe('Cypress Tests', () => {
+
     beforeEach(() => {
         cy.visit('https://justin-wilkins.netlify.app/testplayground');
     });

@@ -102,22 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Drag-and-drop functionality
-    dragItem.addEventListener("dragstart", (event) => {
-        event.dataTransfer.setData("text", event.target.id);
-    });
-
-    dropZone.addEventListener("dragover", (event) => {
-        event.preventDefault();
-    });
-
-    dropZone.addEventListener("drop", (event) => {
-        event.preventDefault();
-        const data = event.dataTransfer.getData("text");
-        const draggedElement = document.getElementById(data);
-        dropZone.appendChild(draggedElement);
-    });
-
     // Display stored data when the page loads
     displayStoredData();
 });
