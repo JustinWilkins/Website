@@ -1,40 +1,36 @@
-name: Cypress Tests
+name: Run Cypress Tests and Update Website with Mochawesome Report
 
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - main 
 
 jobs:
-  cypress-run:
+  deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '16'
-
-    - name: Install dependencies
-      run: npm install 
-
-    - name: Run Cypress tests with MochaAwesome
-      run: npx cypress run
-
-    - name: Merge Mochawesome Reports
-      run: npx mochawesome-merge results/*.json > results/mochawesome.json
-
-    - name: Generate HTML Report
-      run: npx marge results/mochawesome.json --reportDir results/html-report
-
-    - name: Upload Cypress results
-      uses: actions/upload-artifact@v4
-      with:
-        name: cypress-results
-        path: results/**
+    - name: Set up Git configuration
+      run: |
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "GitHub Actions"
+    - name: Install dependencies and run tests
+      run: |
+        npm install
+        npm run test --reporter mochawesome --reporter-options reportDir=src/html-report,reportFilename=mochawesome.html
+    - name: Check if the report files were generated
+      run: |
+        echo "Checking src/html-report folder after tests..."
+        ls -al src/html-report/
+    - name: Stage and commit mochawesome report
+      run: |
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "GitHub Actions"
+        git add -f src/html-report/mochawesome.json
+        git commit --amend --no-edit -m "Add Mochawesome report"
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/JustinWilkins/Website.git HEAD:main --force
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
