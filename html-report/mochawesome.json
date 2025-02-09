@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 1,
-    "start": "2025-02-09T04:00:23.672Z",
-    "end": "2025-02-09T04:00:28.331Z",
-    "duration": 4659,
+    "start": "2025-02-09T04:02:09.969Z",
+    "end": "2025-02-09T04:02:14.657Z",
+    "duration": 4688,
     "testsRegistered": 2,
     "passPercent": 50,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "8002a9de-adc2-4b86-a025-a2978998f2d6",
+      "uuid": "d11638bc-e215-4630-9b40-e0852361a57d",
       "title": "",
       "fullFile": "cypress/e2e/main.cy.ts",
       "file": "cypress/e2e/main.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "31474a5f-9cae-420c-84c4-98f6033e52e0",
+          "uuid": "7965148e-827f-4c58-ad96-f7b3908f6277",
           "title": "Cypress Tests",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Should load the page",
               "fullTitle": "Cypress Tests Should load the page",
               "timedOut": null,
-              "duration": 411,
+              "duration": 400,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.get('h1').should('be.visible');\ncy.get('nav').should('exist');",
               "err": {},
-              "uuid": "a16facb4-8e1a-4066-8766-828b5e8eb8c6",
-              "parentUUID": "31474a5f-9cae-420c-84c4-98f6033e52e0",
+              "uuid": "0d7ef0fd-71e9-4f29-87e6-b729d03e27fa",
+              "parentUUID": "7965148e-827f-4c58-ad96-f7b3908f6277",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Should fail",
               "fullTitle": "Cypress Tests Should fail",
               "timedOut": null,
-              "duration": 4214,
+              "duration": 4254,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -69,22 +69,22 @@
                 "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `YoMomma`, but never found it.\n    at Context.eval (webpack://your-project-name/./cypress/e2e/main.cy.ts:10:0)",
                 "diff": null
               },
-              "uuid": "d23cdbc1-2e31-496e-816d-7a16170ad67f",
-              "parentUUID": "31474a5f-9cae-420c-84c4-98f6033e52e0",
+              "uuid": "0c1ff8c1-227b-42b2-bacc-4649806e0140",
+              "parentUUID": "7965148e-827f-4c58-ad96-f7b3908f6277",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a16facb4-8e1a-4066-8766-828b5e8eb8c6"
+            "0d7ef0fd-71e9-4f29-87e6-b729d03e27fa"
           ],
           "failures": [
-            "d23cdbc1-2e31-496e-816d-7a16170ad67f"
+            "0c1ff8c1-227b-42b2-bacc-4649806e0140"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 4625,
+          "duration": 4654,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
