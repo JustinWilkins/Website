@@ -27,29 +27,15 @@ jobs:
         npm run test --reporter mochawesome --reporter-options reportDir=src/html-report,reportFilename=mochawesome.json
       continue-on-error: true
 
-    - name: Print Cypress logs
-      run: |
-        cat cypress/results/*.json || echo "No results found"
-
     - name: List contents after test run
       run: ls -l src/html-report/
 
     - name: Ensure mochawesome.json exists
       run: ls -l src/html-report/ || echo "Mochawesome report directory not found"
 
-
     - name: Pull latest changes
       run: git pull --rebase origin main
     
-    - name: Stage and commit mochawesome report
-      run: |
-        git add -A
-        git commit -m "Update Mochawesome report" || echo "No changes to commit"
-    
-    - name: Push changes
-      run: git push origin main
-
-
     - name: Commit and push mochawesome report
       run: |
         if [ -n "$(git status --porcelain)" ]; then
