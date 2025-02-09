@@ -27,7 +27,7 @@ jobs:
     - name: Install dependencies and run tests
       run: |
         npm install
-        npm run test --reporter mochawesome --reporter-options reportDir=src/html-report,reportFilename=mochawesome.html
+        npm run test --reporter mochawesome --reporter-options reportDir=src/html-report,reportFilename=mochawesome.json
       continue-on-error: true
 
     - name: Check if the report files were generated
