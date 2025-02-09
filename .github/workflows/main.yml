@@ -23,7 +23,10 @@ jobs:
         npm install
         npm run test --reporter mochawesome --reporter-options reportDir=src/html-report,reportFilename=mochawesome.html
       continue-on-error: true
-        
+
+    - name: Check mochawesome.json contents before commit
+      run: cat src/html-report/mochawesome.json
+
     - name: Check if the report files were generated
       run: |
         echo "Checking src/html-report folder after tests..."
@@ -47,3 +50,6 @@ jobs:
         git add -A
         git commit -m "Update Mochawesome report" || echo "No changes to commit"
         git push origin main
+
+    - name: Check mochawesome.json after Cypress tests
+      run: cat src/html-report/mochawesome.json
