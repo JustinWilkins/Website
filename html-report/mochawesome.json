@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-02-09T04:04:10.084Z",
+    "end": "2025-02-09T04:04:14.811Z",
+    "duration": 4727,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3818dded-889d-45e4-8df0-9cb68548f179",
+      "title": "",
+      "fullFile": "cypress/e2e/main.cy.ts",
+      "file": "cypress/e2e/main.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dc21b8d6-f2c2-442c-bd72-5dcd7b8a7310",
+          "title": "Cypress Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should load the page",
+              "fullTitle": "Cypress Tests Should load the page",
+              "timedOut": null,
+              "duration": 374,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('h1').should('be.visible');\ncy.get('nav').should('exist');",
+              "err": {},
+              "uuid": "9595cc3d-1b3b-4e9b-baa2-d53b0ab0a3f0",
+              "parentUUID": "dc21b8d6-f2c2-442c-bd72-5dcd7b8a7310",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should fail",
+              "fullTitle": "Cypress Tests Should fail",
+              "timedOut": null,
+              "duration": 4319,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('YoMomma');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `YoMomma`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `YoMomma`, but never found it.\n    at Context.eval (webpack://your-project-name/./cypress/e2e/main.cy.ts:10:0)",
+                "diff": null
+              },
+              "uuid": "690d98b4-07a3-4425-b0dc-061250c2dbd1",
+              "parentUUID": "dc21b8d6-f2c2-442c-bd72-5dcd7b8a7310",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9595cc3d-1b3b-4e9b-baa2-d53b0ab0a3f0"
+          ],
+          "failures": [
+            "690d98b4-07a3-4425-b0dc-061250c2dbd1"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4693,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "html-report",
+        "overwrite": true,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
