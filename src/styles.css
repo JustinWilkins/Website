@@ -188,7 +188,6 @@ footer {
 
 .accordion-content {
     display: none;
-    /* Initially hide content */
     padding: 10px;
     transition: all 0.3s ease;
 }
@@ -196,12 +195,10 @@ footer {
 
 .accordion-item.active .accordion-content {
     display: block;
-    /* Show content when active */
 }
 
 .nested-accordion .accordion-content {
     display: none;
-    /* Hide content of nested accordions */
 }
 
 table {

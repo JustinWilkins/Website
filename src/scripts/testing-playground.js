@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const updateProgressBtn = document.getElementById("update-progress");
     const dragItem = document.getElementById("drag-item");
     const dropZone = document.getElementById("drop-zone");
+    const accordionItems = document.querySelectorAll(".accordion-item");
 
     // Form data html construction
     function displayStoredData() {
@@ -77,11 +78,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Accordion functionality
-    const accordionHeaders = document.querySelectorAll(".accordion-header");
-    accordionHeaders.forEach(header => {
+    accordionItems.forEach(item => {
+        const content = item.querySelector(".accordion-content");
+
+        content.style.display = "none";
+
+        const header = item.querySelector(".accordion-header");
         header.addEventListener("click", () => {
-            const body = header.nextElementSibling;
-            body.classList.toggle("hidden");
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
         });
     });
 

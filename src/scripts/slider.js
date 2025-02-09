@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const prevButton = document.getElementById("prevBtn");
     const nextButton = document.getElementById("nextBtn");
 
-    console.log("Script Loaded");
-
     let currentSlide = parseInt(localStorage.getItem("currentSlide")) || 0;
 
     function showSlide(index) {
