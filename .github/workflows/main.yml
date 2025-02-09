@@ -33,14 +33,12 @@ jobs:
     - name: Ensure mochawesome.json exists
       run: ls -l src/html-report/ || echo "Mochawesome report directory not found"
 
-    - name: Pull latest changes
-      run: git pull --rebase origin main
-    
     - name: Commit and push mochawesome report
       run: |
         if [ -n "$(git status --porcelain)" ]; then
           git add -A
           git commit -m "Update Mochawesome report"
+          git pull --rebase origin main
           git push origin main
         else
           echo "No changes to commit"
