@@ -32,15 +32,21 @@ jobs:
 
     - name: Stash local changes
       run: git stash --include-untracked
-
+    
     - name: Pull latest changes
       run: git pull --rebase origin main
-  
+    
     - name: Apply stashed changes
       run: git stash pop || echo "No changes to apply"
-
-    - name: Pull latest changes
-      run: git pull --rebase origin main
+    
+    - name: Stage all changes
+      run: git add -A
+    
+    - name: Commit unstaged changes (if any)
+      run: git diff --cached --quiet || git commit -m "Auto-commit unstaged changes"
+    
+    - name: Push changes
+      run: git push origin main
         
     - name: Stage and commit mochawesome report
       run: |
