@@ -1,26 +1,63 @@
 document.addEventListener("DOMContentLoaded", function () {
-    async function fetchTestResults() {
-        try {
-            const response = await fetch('/path-to-your-json-file.json');
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data = await response.json();
+    function renderChart(data) {
+        // Extract test titles and states
+        const labels = data.results[0].suites[0].tests.map(test => test.title); // Test titles (labels for the chart)
+        const passes = data.results[0].suites[0].tests.map(test => test.state === 'passed' ? 1 : 0); // 1 for passed, 0 for failed
+        const failures = data.results[0].suites[0].tests.map(test => test.state === 'failed' ? 1 : 0); // 1 for failed, 0 for passed
 
-            new Chart(document.getElementById('testResultsChart'), {
-                type: 'bar',
-                data: {
-                    labels: ['Passed', 'Failed'],
-                    datasets: [{
-                        label: 'Test Results',
-                        data: [data.passed, data.failed],
-                        backgroundColor: ['#4CAF50', '#FF5252']
-                    }]
+        const ctx = document.getElementById('testResultsChart').getContext('2d');
+
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Passed',
+                    data: passes,
+                    backgroundColor: 'rgba(46, 204, 113, 0.7)',
+                    borderColor: 'rgba(46, 204, 113, 1)',
+                    borderWidth: 1
+                }, {
+                    label: 'Failed',
+                    data: failures,
+                    backgroundColor: 'rgba(231, 76, 60, 0.7)',
+                    borderColor: 'rgba(231, 76, 60, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: '#34495e',
+                        titleColor: '#fff',
+                        bodyColor: '#fff',
+                    }
                 }
-            });
-        } catch (error) {
-            console.error('There was a problem fetching the test results:', error);
-        }
+            }
+        });
     }
-    fetchTestResults();
+
+    // Fetch the JSON file from the GitHub repository
+    fetch('https://raw.githubusercontent.com/JustinWilkins/Website/main/src/html-report/mochawesome.json')
+        .then(response => response.json())
+        .then(data => renderChart(data))
+        .catch(error => console.error('Error loading JSON:', error));
 });

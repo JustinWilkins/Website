@@ -8,4 +8,8 @@ describe('Cypress Tests', () => {
         cy.get('nav').should('exist');
     });
 
+    it('Should fail', () => {
+        cy.get('YoMomma')
+    });
+
 });

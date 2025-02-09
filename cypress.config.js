@@ -2,9 +2,12 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    reporter: 'spec',
+    reporter: "mochawesome",
     reporterOptions: {
-      output: 'results/.test-results.json',
+      reportDir: "results",
+      overwrite: true,
+      html: false,
+      json: true,
     },
     baseUrl: 'https://justin-wilkins.netlify.app',
     supportFile: false,
