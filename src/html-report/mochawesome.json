@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2025-02-09T05:29:43.775Z",
-    "end": "2025-02-09T05:29:44.573Z",
-    "duration": 798,
+    "start": "2025-02-09T05:32:36.940Z",
+    "end": "2025-02-09T05:32:37.610Z",
+    "duration": 670,
     "testsRegistered": 7,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f9705bb1-e519-44e0-96a4-d2f61afa35bf",
+      "uuid": "d466ee75-985e-4a0d-8e42-03c82234b7cb",
       "title": "",
       "fullFile": "cypress/e2e/main.cy.ts",
       "file": "cypress/e2e/main.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "7965212f-ba24-4a2a-935e-e2cc3f5b7e8b",
+          "uuid": "5be46203-90de-4698-a7f3-dd514f6a8d1d",
           "title": "Cypress Tests",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Should load the page",
               "fullTitle": "Cypress Tests Should load the page",
               "timedOut": null,
-              "duration": 739,
+              "duration": 631,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of null (reading 'addEventListener')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Cypress Tests`\n    at HTMLDocument.<anonymous> (https://justin-wilkins.netlify.app/scripts/testing-playground.js:106:14)",
                 "diff": null
               },
-              "uuid": "343c278f-a4e2-448d-902a-06d57a5b693f",
-              "parentUUID": "7965212f-ba24-4a2a-935e-e2cc3f5b7e8b",
+              "uuid": "9cd2b90b-9b91-4ae6-ac78-59d508b5e7ab",
+              "parentUUID": "5be46203-90de-4698-a7f3-dd514f6a8d1d",
               "isHook": false,
               "skipped": false
             },
@@ -69,8 +69,8 @@
               "context": null,
               "code": "cy.get('input[name=\"name\"]').type(\"Testing\");\ncy.get('button[type=\"submit\"]').click();\ncy.get('div[class=\"toast\"]').should('be.visible');\ncy.get('tr').should('be.visible');",
               "err": {},
-              "uuid": "731d82bf-ce75-4688-9f5f-a01528767d13",
-              "parentUUID": "7965212f-ba24-4a2a-935e-e2cc3f5b7e8b",
+              "uuid": "f4011ad1-82c4-4a40-8047-94625fea05fc",
+              "parentUUID": "5be46203-90de-4698-a7f3-dd514f6a8d1d",
               "isHook": false,
               "skipped": true
             },
@@ -87,8 +87,8 @@
               "context": null,
               "code": "cy.get('table tr').should('have.length', 1);\ncy.get('input[name=\"name\"]').type(\"Testing\");\ncy.get('button[type=\"submit\"]').click();\ncy.get('div[class=\"toast\"]').should('be.visible');\ncy.get('tr').should('be.visible');\ncy.get('table tr').should('have.length', 2);\ncy.get('.delete-row').click();\ncy.get('table tr').should('have.length', 1);",
               "err": {},
-              "uuid": "3e74c20b-47ac-46b1-bec0-12366daeb861",
-              "parentUUID": "7965212f-ba24-4a2a-935e-e2cc3f5b7e8b",
+              "uuid": "a10382e5-a55b-4c48-ba2e-fa17104ff9bc",
+              "parentUUID": "5be46203-90de-4698-a7f3-dd514f6a8d1d",
               "isHook": false,
               "skipped": true
             },
@@ -105,8 +105,8 @@
               "context": null,
               "code": "cy.get('button[class=\"accordion-header\"]').contains(\"Item 1\").click();\ncy.get('.accordion-content > p').should('be.visible');",
               "err": {},
-              "uuid": "423a646e-2fd0-42b0-90f3-a39aa14fbd33",
-              "parentUUID": "7965212f-ba24-4a2a-935e-e2cc3f5b7e8b",
+              "uuid": "57571eea-e5e8-4210-98aa-f6d45cbc8b0f",
+              "parentUUID": "5be46203-90de-4698-a7f3-dd514f6a8d1d",
               "isHook": false,
               "skipped": true
             },
@@ -123,8 +123,8 @@
               "context": null,
               "code": "cy.get('#progress-bar')\n    .should('have.css', 'width', '0px');",
               "err": {},
-              "uuid": "5d8ae364-ae7a-4a77-8810-39e4982039e3",
-              "parentUUID": "7965212f-ba24-4a2a-935e-e2cc3f5b7e8b",
+              "uuid": "76b7cbea-cc55-415a-b96a-d7e3631008eb",
+              "parentUUID": "5be46203-90de-4698-a7f3-dd514f6a8d1d",
               "isHook": false,
               "skipped": true
             },
@@ -141,8 +141,8 @@
               "context": null,
               "code": "cy.get('#update-progress').click();\ncy.wait(500);\ncy.get('#progress-bar')\n    .invoke('css', 'width')\n    .then((width) => {\n    const widthValue = parseFloat(width);\n    expect(widthValue).to.be.greaterThan(0);\n});",
               "err": {},
-              "uuid": "3e086c23-2ad3-4f8a-b4c4-40b817c3ac56",
-              "parentUUID": "7965212f-ba24-4a2a-935e-e2cc3f5b7e8b",
+              "uuid": "cf420153-bb9c-456d-b7f5-c3210b6e74cc",
+              "parentUUID": "5be46203-90de-4698-a7f3-dd514f6a8d1d",
               "isHook": false,
               "skipped": true
             },
@@ -159,8 +159,8 @@
               "context": null,
               "code": "cy.get('Fail');",
               "err": {},
-              "uuid": "a3f48402-c767-4938-b7e2-deb9e35ad922",
-              "parentUUID": "7965212f-ba24-4a2a-935e-e2cc3f5b7e8b",
+              "uuid": "c29d4b62-8250-4955-b9ea-c7a7943dc861",
+              "parentUUID": "5be46203-90de-4698-a7f3-dd514f6a8d1d",
               "isHook": false,
               "skipped": true
             }
@@ -168,18 +168,18 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "343c278f-a4e2-448d-902a-06d57a5b693f"
+            "9cd2b90b-9b91-4ae6-ac78-59d508b5e7ab"
           ],
           "pending": [],
           "skipped": [
-            "731d82bf-ce75-4688-9f5f-a01528767d13",
-            "3e74c20b-47ac-46b1-bec0-12366daeb861",
-            "423a646e-2fd0-42b0-90f3-a39aa14fbd33",
-            "5d8ae364-ae7a-4a77-8810-39e4982039e3",
-            "3e086c23-2ad3-4f8a-b4c4-40b817c3ac56",
-            "a3f48402-c767-4938-b7e2-deb9e35ad922"
+            "f4011ad1-82c4-4a40-8047-94625fea05fc",
+            "a10382e5-a55b-4c48-ba2e-fa17104ff9bc",
+            "57571eea-e5e8-4210-98aa-f6d45cbc8b0f",
+            "76b7cbea-cc55-415a-b96a-d7e3631008eb",
+            "cf420153-bb9c-456d-b7f5-c3210b6e74cc",
+            "c29d4b62-8250-4955-b9ea-c7a7943dc861"
           ],
-          "duration": 739,
+          "duration": 631,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
