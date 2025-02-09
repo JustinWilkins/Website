@@ -30,11 +30,6 @@ jobs:
         npm run test --reporter mochawesome --reporter-options reportDir=src/html-report,reportFilename=mochawesome.json
       continue-on-error: true
 
-    - name: Check if the report files were generated
-      run: |
-        echo "Checking src/html-report folder after tests..."
-        ls -al src/html-report/
-
     - name: Pull latest changes
       run: git pull --rebase origin main
         
