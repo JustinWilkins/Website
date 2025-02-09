@@ -34,6 +34,9 @@ jobs:
       run: |
         echo "Checking src/html-report folder after tests..."
         ls -al src/html-report/
+
+    - name: Pull latest changes
+      run: git pull --rebase origin main
         
     - name: Stage and commit mochawesome report
       run: |
