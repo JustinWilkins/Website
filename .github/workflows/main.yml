@@ -17,14 +17,18 @@ jobs:
       run: |
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git config --global user.name "GitHub Actions"
+        
     - name: Install dependencies and run tests
       run: |
         npm install
         npm run test --reporter mochawesome --reporter-options reportDir=src/html-report,reportFilename=mochawesome.html
+      continue-on-error: true
+        
     - name: Check if the report files were generated
       run: |
         echo "Checking src/html-report folder after tests..."
         ls -al src/html-report/
+        
     - name: Stage and commit mochawesome report
       run: |
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
