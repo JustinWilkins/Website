@@ -34,7 +34,7 @@ jobs:
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git config --global user.name "GitHub Actions"
         git add -f src/html-report/mochawesome.json
-        git commit --amend --no-edit -m "Add Mochawesome report"
-        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/JustinWilkins/Website.git origin main --force
+        git commit -m "Add Mochawesome report"
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/JustinWilkins/Website.git origin main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
