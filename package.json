@@ -5,9 +5,11 @@
     "scripts": {
         "cypress:open": "cypress open",
         "cypress:run": "cypress run",
-        "test": "cypress run --config baseUrl=https://justin-wilkins.netlify.app"
+        "test": "cypress run --config baseUrl=https://justin-wilkins.netlify.app",
+        "test:playwright": "playwright test && node merge-mochawesome.js"
     },
     "devDependencies": {
+        "@playwright/test": "^1.50.1",
         "@types/cypress": "^0.1.6",
         "cypress": "^14.0.2",
         "mochawesome": "^7.1.3",
