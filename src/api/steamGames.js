@@ -2,7 +2,6 @@ const fetch = global.fetch;
 
 exports.handler = async function (event, context) {
     try {
-        const STEAM_API_KEY = process.env.STEAM_API_KEY;
         const STEAM_ID = "76561198254461806";
 
         const response = await fetch(
