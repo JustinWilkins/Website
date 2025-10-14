@@ -14,9 +14,9 @@ module.exports = defineConfig({
     specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
     setupNodeEvents(on, config) {
     },
-    video: false,
-    screenshotOnRunFailure: true,
-    viewportWidth: 1280,
-    viewportHeight: 720
+    video: true,
+    screenshotOnRunFailure: false,
+    viewportWidth: 1920,
+    viewportHeight: 1080
   },
 });

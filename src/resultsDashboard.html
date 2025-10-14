@@ -6,28 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script defer src="scripts/accordions.js"></script>
+    <script src="scripts/page-transitions.js"></script>
     <title>Results Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;700&display=swap"
         rel="stylesheet">
 </head>
 
-<body>
+<body class="loaded">
+    <div class="page-overlay"></div>
     <header>
-        <h1>Justin Wilkins</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="testPlayground.html">Testing Playground</a></li>
-                <li><a href="resultsDashboard.html">Results Dashboard</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)">Contact</a>
-                    <div class="dropdown-content">
-                        <a href="contact.html">Contact Page</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+        <div class="header-wrapper">
+            <h1 class="logo">Justin Wilkins</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="testPlayground.html">Testing Playground</a></li>
+                    <li><a href="resultsDashboard.html">Results Dashboard</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">Contact &#9662;</a>
+                        <div class="dropdown-content">
+                            <a href="contact.html">Contact Page</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -41,6 +45,21 @@
                     <li>Playwright</li>
                 </ul>
             </div>
+        </section>
+
+        <section class="results-section">
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">Videos</button>
+                    <section class="accordion-content">
+                        <video width="320" height="240" controls>
+                            <source src="../cypress/videos/main.cy.ts.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </section>
+                </div>
+            </div>
+
         </section>
 
         <section class="results-section">
@@ -61,8 +80,11 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Justin Wilkins</p>
+        <div class="footer-wrapper">
+            <p>© 2025 Justin Wilkins</p>
+        </div>
     </footer>
+
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

@@ -8,26 +8,30 @@
     <title>Automation Test Playground</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="scripts/testing-playground.js"></script>
+    <script src="scripts/page-transitions.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;700&display=swap"
         rel="stylesheet">
 </head>
 
-<body>
+<body class="loaded">
+    <div class="page-overlay"></div>
     <header>
-        <h1>Justin Wilkins</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="testPlayground.html">Testing Playground</a></li>
-                <li><a href="resultsDashboard.html">Results Dashboard</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)">Contact</a>
-                    <div class="dropdown-content">
-                        <a href="contact.html">Contact Page</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+        <div class="header-wrapper">
+            <h1 class="logo">Justin Wilkins</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="testPlayground.html">Testing Playground</a></li>
+                    <li><a href="resultsDashboard.html">Results Dashboard</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">Contact &#9662;</a>
+                        <div class="dropdown-content">
+                            <a href="contact.html">Contact Page</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section id="PlaceHolder" class="playground-header-section">
@@ -123,9 +127,12 @@
 
     </main>
 
-    <footer class="footer">
-        <p>&copy; 2025 Justin Wilkins</p>
+    <footer>
+        <div class="footer-wrapper">
+            <p>© 2025 Justin Wilkins</p>
+        </div>
     </footer>
+
 </body>
 
 </html>

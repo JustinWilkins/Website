@@ -10,89 +10,98 @@
     <script defer src="scripts/slider.js"></script>
     <script defer src="scripts/api.js"></script>
     <script defer src="scripts/accordions.js"></script>
+    <script src="scripts/page-transitions.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;700&display=swap"
         rel="stylesheet">
 </head>
 
-<body>
+<body class="loaded">
+    <div class="page-overlay"></div>
     <header>
-        <h1>Justin Wilkins</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="testPlayground.html">Testing Playground</a></li>
-                <li><a href="resultsDashboard.html">Results Dashboard</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)">Contact</a>
-                    <div class="dropdown-content">
-                        <a href="contact.html">Contact Page</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+        <div class="header-wrapper">
+            <h1 class="logo">Justin Wilkins</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="testPlayground.html">Testing Playground</a></li>
+                    <li><a href="resultsDashboard.html">Results Dashboard</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">Contact &#9662;</a>
+                        <div class="dropdown-content">
+                            <a href="contact.html">Contact Page</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main class="home-section">
+    <main>
 
-        <section class="container">
-            <div>
-                <h2>About Me</h2>
-                <p id="about-text">
-                </p>
-            </div>
+        <section class="home-section">
+            <section class="container">
+                <div>
+                    <h2>About Me</h2>
+                    <p id="about-text">
+                    </p>
+                </div>
 
-            <a> </a>
+                <a> </a>
+            </section>
         </section>
 
-        <section class="container">
-            <h2></h2>
+        <section class="home-section">
+            <section class="container">
+                <h2></h2>
 
-            <div class="accordion">
-                <div class="accordion-item">
-                    <button class="accordion-header">Gallery</button>
-                    <section class="accordion-content">
-                        <div class="slider-container">
-                            <button class="prev" id="prevBtn">&#10094;</button>
-                            <div class="slider">
-                                <img src="images/image1.jpg" class="slide">
-                                <img src="images/image2.jpg" class="slide">
-                            </div>
-                            <button class="next" id="nextBtn">&#10095;</button>
-                        </div>
-                    </section>
-                </div>
                 <div class="accordion">
-
-                    <!-- Parent Accordion -->
                     <div class="accordion-item">
-                        <button class="accordion-header">Work Experience</button>
-                        <div class="accordion-content">
-
-                            <div class="nested-accordion">
-                                <div class="accordion-item">
-                                    <button class="accordion-header"></button>
-                                    <div class="accordion-content"></div>
+                        <button class="accordion-header">Gallery</button>
+                        <section class="accordion-content">
+                            <div class="slider-container">
+                                <button class="prev" id="prevBtn">&#10094;</button>
+                                <div class="slider">
+                                    <img src="images/image1.jpg" class="slide">
+                                    <img src="images/image2.jpg" class="slide">
                                 </div>
+                                <button class="next" id="nextBtn">&#10095;</button>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="accordion">
 
-                                <div class="accordion-item">
-                                    <button class="accordion-header"></button>
-                                    <div class="accordion-content">
+                        <!-- Parent Accordion -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">Work Experience</button>
+                            <div class="accordion-content">
+
+                                <div class="nested-accordion">
+                                    <div class="accordion-item">
+                                        <button class="accordion-header"></button>
+                                        <div class="accordion-content"></div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <button class="accordion-header"></button>
+                                        <div class="accordion-content">
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
-
                         </div>
+
                     </div>
-
                 </div>
-            </div>
+            </section>
         </section>
-
 
     </main>
 
     <footer>
-        <p>&copy; 2025 Justin Wilkins</p>
+        <div class="footer-wrapper">
+            <p>© 2025 Justin Wilkins</p>
+        </div>
     </footer>
 
 </body>
