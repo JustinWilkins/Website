@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const jobDiv = document.createElement("div");
       jobDiv.className = "accordion-item";
       jobDiv.innerHTML = `
-        <button class="accordion-header">${job.company}</button>
-        <div class="accordion-content">
+        <h4>${job.company}</h4>
           ${job.roles.map(role => `
             <div class="role">
               <h3>${role.title}</h3>
@@ -23,7 +22,6 @@ document.addEventListener("DOMContentLoaded", async () => {
               <p>${role.details.join("<br>")}</p>
             </div>
           `).join("")}
-        </div>
       `;
       workContainer.appendChild(jobDiv);
     });

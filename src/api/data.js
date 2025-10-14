@@ -3,23 +3,23 @@ exports.handler = async function () {
         name: "Justin Wilkins",
         hometown: "Avon, NY",
         bio: `Hi, my name is Justin. I grew up with two older brothers.
-I started work at a company called Carestream as a Quality Assurance Engineer,
-but quickly accelerated into a role as an Automation Engineer and eventually as a
-Software Contractor.
+        I started work at a company called Carestream as a Quality Assurance Engineer,
+        but quickly accelerated into a role as an Automation Engineer and eventually as a
+        Software Contractor.
 
-Soon enough I realized that I enjoyed building and developing software, but I had a knack for
-testing and pointing out problems that others couldn't find. You can read more about my experience down
-below.
+        Soon enough I realized that I enjoyed building and developing software, but I had a knack for
+        testing and pointing out problems that others couldn't find. You can read more about my experience down
+        below.
 
-I'm currently interested in roles that would allow me to build automated testing frameworks
-and drive better quality software by developing quality testing software.
+        I'm currently interested in roles that would allow me to build automated testing frameworks
+        and drive better quality software by developing quality testing software.
 
-When I’m not immersed in automation, you’ll likely find me gaming, skiing, or riding on my motorcycle.
+        When I’m not immersed in automation, you’ll likely find me gaming, skiing, or riding on my motorcycle.
 
-Please reach out if you'd like to discuss any opportunities you might have, or just to chat. I have
-a contact page on my navigation header above.
+        Please reach out if you'd like to discuss any opportunities you might have, or just to chat. I have
+        a contact page on my navigation header above.
 
-Also, my cat Jimmy says hi.`
+        Also, my cat Jimmy says hi.`
     };
 
     const work = [
