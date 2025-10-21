@@ -7,8 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script defer src="scripts/accordions.js"></script>
     <script src="scripts/page-transitions.js"></script>
+    <script defer src="scripts/api.js"></script>
     <title>Results Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;700&display=swap"
         rel="stylesheet">
 </head>
@@ -18,64 +19,117 @@
         <div class="header-wrapper">
             <h1 class="logo">Justin Wilkins</h1>
             <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="testPlayground.html">Testing Playground</a></li>
-                    <li><a href="resultsDashboard.html">Results Dashboard</a></li>
+                <ul class="menu">
                     <li class="dropdown">
-                        <a href="javascript:void(0)">Contact &#9662;</a>
+                        <a href="index.html" class="dropdown-toggle">Home</a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="testPlayground.html" class="dropdown-toggle">Testing&#9662;</a>
                         <div class="dropdown-content">
-                            <a href="contact.html">Contact Page</a>
+                            <a href="resultsDashboard.html">Testing Dashboard</a>
+                            <a href="testDocs.html">Testing Docs</a>
                         </div>
                     </li>
+
+                    <li class="dropdown">
+                        <a href="workExperience.html" class="dropdown-toggle">Experience</a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle">About Me &#9662;</a>
+                        <div class="dropdown-content">
+                            <a href="gaming.html">Gaming</a>
+                            <a href="skiing.html">Skiing</a>
+                            <a href="motorcycle.html">Motorcycle</a>
+                            <a href="pets.html">Pets</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="contact.html" class="dropdown-toggle">Contact</a>
+                    </li>
+
                 </ul>
             </nav>
+
+            <div class="social-icons">
+                <a href="https://github.com/JustinWilkins" target="_blank" aria-label="GitHub">
+                    <img src="images/github.svg" alt="GitHub">
+                </a>
+                <a href="https://www.instagram.com/justin_wilkins1" target="_blank" aria-label="Instagram">
+                    <img src="images/instagram.svg" alt="Instagram">
+                </a>
+
+                <a href="https://discord.com/users/98734434131406848" target="_blank" aria-label="Discord">
+                    <img src="images/discord.svg" alt="Discord">
+                </a>
+
+                <a href="https://www.facebook.com/justin.wilkins.391969" target="_blank" aria-label="Facebook">
+                    <img src="images/facebook.svg" alt="Facebook">
+                </a>
+
+                <a href="https://www.reddit.com/user/jwilks2016" target="_blank" aria-label="Reddit">
+                    <img src="images/reddit.svg" alt="Reddit">
+                </a>
+
+                <a href="https://www.linkedin.com/in/justin-s-wilkins" target="_blank" aria-label="Linkedin">
+                    <img src="images/linkedin.svg" alt="Linkedin">
+                </a>
+
+                <a href="https://open.spotify.com/user/wolfie1112" target="_blank" aria-label="Spotify">
+                    <img src="images/spotify.svg" alt="Spotify">
+                </a>
+            </div>
+
         </div>
     </header>
 
+
     <main>
         <div class="page-overlay"></div>
-        <section id="PlaceHolder" class="results-section">
-            <div class="container">
-                <h2>Results</h2>
-                <h3>These are the results of the latest test runs against this webpage. Using different tools including:
-                </h3>
-                <ul>
-                    <li>Cypress</li>
-                    <li>Playwright</li>
-                </ul>
-            </div>
-        </section>
 
-        <section class="results-section">
-            <div class="accordion">
-                <div class="accordion-item">
-                    <button class="accordion-header">Videos</button>
-                    <section class="accordion-content">
-                        <video width="320" height="240" controls>
-                            <source src="../cypress/videos/main.cy.ts.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </section>
+        <section class="work-section">
+            <div class="flex">
+                <div class="left-column">
+                    <div class="container">
+                        <h2>Results</h2>
+                        <h3>These are the results of the latest test runs against this webpage. Using different
+                            tools including:
+                        </h3>
+                        <ul>
+                            <div class="accordion">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">Cypress</button>
+                                    <section class="accordion-content">
+                                        <section id="mochawesome-report">
+                                            <canvas id="testResultsChart" width="400" height="200"></canvas>
+                                        </section>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="accordion">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">Playwright</button>
+                                    <section class="accordion-content">
+                                        <section id="mochawesome-report">
+                                            <canvas id="testResultsChart" width="400" height="200"></canvas>
+                                        </section>
+                                    </section>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="right-column">
+                    <iframe src="data/Resume.pdf#toolbar=0" type="application/pdf" width="100%" height="1000px"
+                        style="border:none"></iframe>
+                    <a href="data/Resume.pdf" class="cta-btn" download>Download Resume (PDF)</a>
                 </div>
             </div>
-
         </section>
 
-        <section class="results-section">
-            <h2></h2>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <button class="accordion-header">Cypress Results</button>
-                    <section class="accordion-content">
-                        <section id="mochawesome-report">
-                            <canvas id="testResultsChart" width="400" height="200"></canvas>
-                        </section>
-                    </section>
-                </div>
-            </div>
-
-        </section>
 
     </main>
 

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Automation Test Playground</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <script defer src="../scripts/modal.js"></script>
+    <script src="../scripts/page-transitions.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="loaded">
+    <header>
+        <div class="header-wrapper">
+            <h1 class="logo">Justin Wilkins</h1>
+            <nav>
+                <ul class="menu">
+                    <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle">Home</a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="../testPlayground.html" class="dropdown-toggle">Testing&#9662;</a>
+                        <div class="dropdown-content">
+                            <a href="../resultsDashboard.html">Results Dashboard</a>
+                            <a href="../testDocs.html">Testing Docs</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="../workExperience.html" class="dropdown-toggle">Experience</a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle">About Me &#9662;</a>
+                        <div class="dropdown-content">
+                            <a href="../gaming.html">Gaming</a>
+                            <a href="../skiing.html">Skiing</a>
+                            <a href="../motorcycle.html">Motorcycle</a>
+                            <a href="../pets.html">Pets</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="../contact.html" class="dropdown-toggle">Contact</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <div class="social-icons">
+                <a href="https://github.com/JustinWilkins" target="_blank" aria-label="GitHub">
+                    <img src="../images/github.svg" alt="GitHub">
+                </a>
+                <a href="https://www.instagram.com/justin_wilkins1" target="_blank" aria-label="Instagram">
+                    <img src="../images/instagram.svg" alt="Instagram">
+                </a>
+                <a href="https://discord.com/users/98734434131406848" target="_blank" aria-label="Discord">
+                    <img src="../images/discord.svg" alt="Discord">
+                </a>
+                <a href="https://www.facebook.com/justin.wilkins.391969" target="_blank" aria-label="Facebook">
+                    <img src="../images/facebook.svg" alt="Facebook">
+                </a>
+                <a href="https://www.reddit.com/user/jwilks2016" target="_blank" aria-label="Reddit">
+                    <img src="../images/reddit.svg" alt="Reddit">
+                </a>
+                <a href="https://www.linkedin.com/in/justin-s-wilkins" target="_blank" aria-label="Linkedin">
+                    <img src="../images/linkedin.svg" alt="Linkedin">
+                </a>
+                <a href="https://open.spotify.com/user/wolfie1112" target="_blank" aria-label="Spotify">
+                    <img src="../images/spotify.svg" alt="Spotify">
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <div class="page-overlay"></div>
+
+        <section class="playground-section">
+            <div class="grid">
+                <div class="left-column">
+
+                    <h2>Modals</h2>
+                    <p>A modal popup is a dialog box that appears on top of the main content, requiring user
+                        interaction before returning to the main content.Modals are commonly used for alerts,
+                        confirmations, forms, or additional information without
+                        navigating away from the current page.</p>
+                    <h3>Tests</h3>
+                    <ul>
+                        <li>Verify that the modal opens when the button is clicked.</li>
+                        <li>Check that the modal displays the correct content.</li>
+                        <li>Ensure that the modal closes when the close button is clicked.</li>
+                        <li>Veerify that the modal is not visible when it is closed.</li>
+                </div>
+
+                <div class="right-column">
+
+                    <h2>Modal Popup</h2>
+                    <div id="modal" class="modal-container hidden">
+                        <div class="modal-content">
+                            <h7 id="modal-message">Justin was here.</h7>
+                            <button class="btn secondary" id="close-modal">Close</button>
+                        </div>
+                    </div>
+                    <button class="btn primary" id="open-modal">Open Modal</button>
+                </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-wrapper">
+            <p>© 2025 Justin Wilkins</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

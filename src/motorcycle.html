@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact</title>
+    <title>Justin Wilkins</title>
     <link rel="stylesheet" href="styles/main.css">
+    <script defer src="scripts/slider.js"></script>
+    <script defer src="scripts/accordions.js"></script>
     <script src="scripts/page-transitions.js"></script>
-    <script defer src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;700&display=swap"
         rel="stylesheet">
 </head>
@@ -59,18 +60,23 @@
                 <a href="https://www.instagram.com/justin_wilkins1" target="_blank" aria-label="Instagram">
                     <img src="images/instagram.svg" alt="Instagram">
                 </a>
+
                 <a href="https://discord.com/users/98734434131406848" target="_blank" aria-label="Discord">
                     <img src="images/discord.svg" alt="Discord">
                 </a>
+
                 <a href="https://www.facebook.com/justin.wilkins.391969" target="_blank" aria-label="Facebook">
                     <img src="images/facebook.svg" alt="Facebook">
                 </a>
+
                 <a href="https://www.reddit.com/user/jwilks2016" target="_blank" aria-label="Reddit">
                     <img src="images/reddit.svg" alt="Reddit">
                 </a>
+
                 <a href="https://www.linkedin.com/in/justin-s-wilkins" target="_blank" aria-label="Linkedin">
                     <img src="images/linkedin.svg" alt="Linkedin">
                 </a>
+
                 <a href="https://open.spotify.com/user/wolfie1112" target="_blank" aria-label="Spotify">
                     <img src="images/spotify.svg" alt="Spotify">
                 </a>
@@ -79,16 +85,33 @@
         </div>
     </header>
 
-
     <main>
         <div class="page-overlay"></div>
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2>Contact</h2>
-                <h4>Interested in collaborating or discussing opportunities? Feel free to reach out!</h4>
-                <p>Email: <a href="mailto:jwilkins2016@gmail.com">jwilkins2016@gmail.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/Justin-S-Wilkins"
-                        target="_blank">linkedin.com/in/Justin-S-Wilkins</a></p>
+
+        <section class="work-section">
+            <div class="flex">
+                <div class="left-column">
+                    This is my first bike that I owned, I don't have it anymore... But it is a 2017 Kawaksaki Ninja
+                    400. I
+                    loved this bike,
+                    it was my first experience riding a motorcycle and I had a blast on it. I learned a lot about
+                    riding and
+                    maintaining a motorcycle on this bike.
+                    I've rode it for 2 yeras before selling it, and am currently looking for something new and
+                    bigger!
+                </div>
+            </div>
+            <div class="slider-container">
+                <button class="prev" id="prevBtn">&#10094;</button>
+                <div class="slider">
+                    <img src="images/motorcycle1.jpg" class="slide">
+                    <img src="images/motorcycle2.jpg" class="slide">
+                    <img src="images/motorcycle3.jpg" class="slide">
+                    <img src="images/motorcycle4.jpg" class="slide">
+                    <img src="images/motorcycle5.jpg" class="slide">
+                    <img src="images/motorcycle6.jpg" class="slide">
+                </div>
+                <button class="next" id="nextBtn">&#10095;</button>
             </div>
         </section>
     </main>
@@ -98,7 +121,6 @@
             <p>© 2025 Justin Wilkins</p>
         </div>
     </footer>
-
 </body>
 
 </html>

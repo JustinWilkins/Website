@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact</title>
+    <title>Justin Wilkins</title>
     <link rel="stylesheet" href="styles/main.css">
+    <script defer src="scripts/slider.js"></script>
+    <script defer src="scripts/accordions.js"></script>
     <script src="scripts/page-transitions.js"></script>
-    <script defer src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;700&display=swap"
         rel="stylesheet">
 </head>
@@ -82,15 +83,28 @@
 
     <main>
         <div class="page-overlay"></div>
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2>Contact</h2>
-                <h4>Interested in collaborating or discussing opportunities? Feel free to reach out!</h4>
-                <p>Email: <a href="mailto:jwilkins2016@gmail.com">jwilkins2016@gmail.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/Justin-S-Wilkins"
-                        target="_blank">linkedin.com/in/Justin-S-Wilkins</a></p>
+
+        <section class="home-section">
+            <h4>Skiing</h4>
+            <p>
+                In my free time I enjoy skiing. I have been skiing since I was a child and it has always been a favorite
+                pastime of mine.
+                I'd say my favorite season is probably winter, I enjoy cold weather and snow. I usually go skiing a few
+                times each winter, depending on the weather and my schedule.
+            </p>
+        </section>
+
+        <section class="home-section">
+            <div class="slider-container">
+                <button class="prev" id="prevBtn">&#10094;</button>
+                <div class="slider">
+                    <img src="images/skiing1.jpg" class="slide">
+                    <img src="images/skiing2.jpg" class="slide">
+                </div>
+                <button class="next" id="nextBtn">&#10095;</button>
             </div>
         </section>
+
     </main>
 
     <footer>
@@ -98,7 +112,6 @@
             <p>© 2025 Justin Wilkins</p>
         </div>
     </footer>
-
 </body>
 
 </html>

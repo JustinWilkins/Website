@@ -37,7 +37,6 @@ describe('Cypress Tests', () => {
             .should('have.css', 'width', '0px');
     });
 
-
     it('Should have a width greater than 0px after clicking "Update Progress"', () => {
         cy.get('#update-progress').click();
 

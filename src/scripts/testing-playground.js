@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const dropZone = document.getElementById("drop-zone");
     const accordionItems = document.querySelectorAll(".accordion-item");
 
-    // Form data html construction
     function displayStoredData() {
         const storedData = JSON.parse(localStorage.getItem('formData')) || [];
         tableBody.innerHTML = '';
@@ -38,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem('formData', JSON.stringify(storedData));
     }
 
-    // Form submission event listener
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         const name = document.getElementById("name").value;
@@ -60,24 +58,10 @@ document.addEventListener("DOMContentLoaded", function () {
         displayStoredData();
         form.reset();
 
-        // Show toast notification
         toast.classList.remove("hidden");
         setTimeout(() => toast.classList.add("hidden"), 3000);
     });
 
-    // Modal open and close
-    const openModalBtn = document.getElementById("open-modal");
-
-    openModalBtn.addEventListener("click", () => {
-        modalMessage.textContent = "This is a test modal.";
-        modal.classList.remove("hidden");
-    });
-
-    closeModalBtn.addEventListener("click", () => {
-        modal.classList.add("hidden");
-    });
-
-    // Accordion functionality
     accordionItems.forEach(item => {
         const content = item.querySelector(".accordion-content");
 
@@ -93,15 +77,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Progress bar update functionality
-    updateProgressBtn.addEventListener("click", () => {
-        let width = parseInt(progressBar.style.width) || 0;
-        if (width < 100) {
-            width += 10;
-            progressBar.style.width = width + "%";
-        }
-    });
-
-    // Display stored data when the page loads
     displayStoredData();
 });

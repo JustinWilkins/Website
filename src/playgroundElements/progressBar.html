@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <script src="scripts/page-transitions.js"></script>
-    <script defer src="script.js"></script>
+    <title>Automation Test Playground</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <script src="../scripts/page-transitions.js"></script>
+    <script src="../scripts/progressBar.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;700&display=swap"
         rel="stylesheet">
 </head>
@@ -20,33 +20,33 @@
             <nav>
                 <ul class="menu">
                     <li class="dropdown">
-                        <a href="index.html" class="dropdown-toggle">Home</a>
+                        <a href="../index.html" class="dropdown-toggle">Home</a>
                     </li>
 
                     <li class="dropdown">
-                        <a href="testPlayground.html" class="dropdown-toggle">Testing&#9662;</a>
+                        <a href="../testPlayground.html" class="dropdown-toggle">Testing&#9662;</a>
                         <div class="dropdown-content">
-                            <a href="resultsDashboard.html">Testing Dashboard</a>
-                            <a href="testDocs.html">Testing Docs</a>
+                            <a href="../resultsDashboard.html">Results Dashboard</a>
+                            <a href="../testDocs.html">Testing Docs</a>
                         </div>
                     </li>
 
                     <li class="dropdown">
-                        <a href="workExperience.html" class="dropdown-toggle">Experience</a>
+                        <a href="../workExperience.html" class="dropdown-toggle">Experience</a>
                     </li>
 
                     <li class="dropdown">
-                        <a class="dropdown-toggle">About Me &#9662;</a>
+                        <a href="" class="dropdown-toggle">About Me &#9662;</a>
                         <div class="dropdown-content">
-                            <a href="gaming.html">Gaming</a>
-                            <a href="skiing.html">Skiing</a>
-                            <a href="motorcycle.html">Motorcycle</a>
-                            <a href="pets.html">Pets</a>
+                            <a href="../gaming.html">Gaming</a>
+                            <a href="../skiing.html">Skiing</a>
+                            <a href="../motorcycle.html">Motorcycle</a>
+                            <a href="../pets.html">Pets</a>
                         </div>
                     </li>
 
                     <li>
-                        <a href="contact.html" class="dropdown-toggle">Contact</a>
+                        <a href="../contact.html" class="dropdown-toggle">Contact</a>
                     </li>
 
                 </ul>
@@ -54,43 +54,42 @@
 
             <div class="social-icons">
                 <a href="https://github.com/JustinWilkins" target="_blank" aria-label="GitHub">
-                    <img src="images/github.svg" alt="GitHub">
+                    <img src="../images/github.svg" alt="GitHub">
                 </a>
                 <a href="https://www.instagram.com/justin_wilkins1" target="_blank" aria-label="Instagram">
-                    <img src="images/instagram.svg" alt="Instagram">
+                    <img src="../images/instagram.svg" alt="Instagram">
                 </a>
                 <a href="https://discord.com/users/98734434131406848" target="_blank" aria-label="Discord">
-                    <img src="images/discord.svg" alt="Discord">
+                    <img src="../images/discord.svg" alt="Discord">
                 </a>
                 <a href="https://www.facebook.com/justin.wilkins.391969" target="_blank" aria-label="Facebook">
-                    <img src="images/facebook.svg" alt="Facebook">
+                    <img src="../images/facebook.svg" alt="Facebook">
                 </a>
                 <a href="https://www.reddit.com/user/jwilks2016" target="_blank" aria-label="Reddit">
-                    <img src="images/reddit.svg" alt="Reddit">
+                    <img src="../images/reddit.svg" alt="Reddit">
                 </a>
                 <a href="https://www.linkedin.com/in/justin-s-wilkins" target="_blank" aria-label="Linkedin">
-                    <img src="images/linkedin.svg" alt="Linkedin">
+                    <img src="../images/linkedin.svg" alt="Linkedin">
                 </a>
                 <a href="https://open.spotify.com/user/wolfie1112" target="_blank" aria-label="Spotify">
-                    <img src="images/spotify.svg" alt="Spotify">
+                    <img src="../images/spotify.svg" alt="Spotify">
                 </a>
             </div>
 
         </div>
     </header>
 
-
     <main>
         <div class="page-overlay"></div>
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2>Contact</h2>
-                <h4>Interested in collaborating or discussing opportunities? Feel free to reach out!</h4>
-                <p>Email: <a href="mailto:jwilkins2016@gmail.com">jwilkins2016@gmail.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/Justin-S-Wilkins"
-                        target="_blank">linkedin.com/in/Justin-S-Wilkins</a></p>
+
+        <section class="playground-section">
+            <h2>Progress Bar</h2>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+                <button class="btn primary" id="update-progress">Update Progress</button>
             </div>
         </section>
+
     </main>
 
     <footer>

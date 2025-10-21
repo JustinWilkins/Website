@@ -1,0 +1,40 @@
+.accordion-header {
+    background-color: #00000077;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #36d666;
+}
+
+.accordion-content {
+    display: none;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.accordion-item.active .accordion-content .nested-accordion {
+    display: block;
+}
+
+.playground-accordion {
+    place-items: center;
+}
+
+.playground-accordion-header {
+    max-width: fit-content;
+}
+
+.work-accordion {
+    flex: 2 1 0;
+    align-items: center;
+    text-align: center;
+}

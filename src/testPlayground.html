@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Automation Test Playground</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/main.css">
     <script defer src="scripts/testing-playground.js"></script>
     <script src="scripts/page-transitions.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;700&display=swap"
@@ -14,117 +14,158 @@
 </head>
 
 <body class="loaded">
-    <div class="page-overlay"></div>
     <header>
         <div class="header-wrapper">
             <h1 class="logo">Justin Wilkins</h1>
             <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="testPlayground.html">Testing Playground</a></li>
-                    <li><a href="resultsDashboard.html">Results Dashboard</a></li>
+                <ul class="menu">
                     <li class="dropdown">
-                        <a href="javascript:void(0)">Contact &#9662;</a>
+                        <a href="index.html" class="dropdown-toggle">Home</a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="testPlayground.html" class="dropdown-toggle">Testing&#9662;</a>
                         <div class="dropdown-content">
-                            <a href="contact.html">Contact Page</a>
+                            <a href="resultsDashboard.html">Results Dashboard</a>
+                            <a href="testDocs.html">Testing Docs</a>
+                            <a href="testDemos.html">Testing Demos</a>
                         </div>
                     </li>
+
+                    <li class="dropdown">
+                        <a href="workExperience.html" class="dropdown-toggle">Experience</a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle">About Me &#9662;</a>
+                        <div class="dropdown-content">
+                            <a href="gaming.html">Gaming</a>
+                            <a href="skiing.html">Skiing</a>
+                            <a href="motorcycle.html">Motorcycle</a>
+                            <a href="pets.html">Pets</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="contact.html" class="dropdown-toggle">Contact</a>
+                    </li>
+
                 </ul>
             </nav>
+
+            <div class="social-icons">
+                <a href="https://github.com/JustinWilkins" target="_blank" aria-label="GitHub">
+                    <img src="images/github.svg" alt="GitHub">
+                </a>
+                <a href="https://www.instagram.com/justin_wilkins1" target="_blank" aria-label="Instagram">
+                    <img src="images/instagram.svg" alt="Instagram">
+                </a>
+                <a href="https://discord.com/users/98734434131406848" target="_blank" aria-label="Discord">
+                    <img src="images/discord.svg" alt="Discord">
+                </a>
+                <a href="https://www.facebook.com/justin.wilkins.391969" target="_blank" aria-label="Facebook">
+                    <img src="images/facebook.svg" alt="Facebook">
+                </a>
+                <a href="https://www.reddit.com/user/jwilks2016" target="_blank" aria-label="Reddit">
+                    <img src="images/reddit.svg" alt="Reddit">
+                </a>
+                <a href="https://www.linkedin.com/in/justin-s-wilkins" target="_blank" aria-label="Linkedin">
+                    <img src="images/linkedin.svg" alt="Linkedin">
+                </a>
+                <a href="https://open.spotify.com/user/wolfie1112" target="_blank" aria-label="Spotify">
+                    <img src="images/spotify.svg" alt="Spotify">
+                </a>
+            </div>
+
         </div>
     </header>
 
-    <section id="PlaceHolder" class="playground-header-section">
-        <div class="container">
-            <h2>Testing</h2>
-            <p>This page is all the different types of elements that I have tested throughout my carrer. Feel free to
-                mess around with them data is stored locally so it won't mess up any tests currently running. If you
-                find a bug, or think of any ideas that I could add to this page let me know and contact me!
-            </p>
-    </section>
-
     <main>
+        <div class="page-overlay"></div>
 
-        <section class="test-section">
-            <h2>Form Submission</h2>
-            <form id="test-form">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" title="Enter your full name">
-                </div>
+        <div class="test-section-container">
 
-                <div class="form-group">
-                    <label for="dropdown">Choose an option:</label>
-                    <select id="dropdown">
-                        <option value="Option1">Option 1</option>
-                        <option value="Option2">Option 2</option>
-                        <option value="Option3">Option 3</option>
-                    </select>
-                </div>
+            <section class="test-section">
+                <h1><a href="playgroundElements/accordion.html">Accordions</a></h1>
+                <h5>Opening and closing an accordion menu to reveal and hide content</h5>
+            </section>
 
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" id="checkbox"> Check me
-                    </label>
-                </div>
+            <section class="test-section">
+                <h1><a href="playgroundElements/formSubmission.html">Form Submission</a></h1>
+                <h5>Verify cell values in a dynamic table, and form submission negative and positive testing</h5>
+            </section>
 
-                <button class="btn primary" type="submit">Submit</button>
-            </form>
+            <section class="test-section">
+                <h1><a href="playgroundElements/progressBar.html">Progress Bars</a></h1>
+                <h5>Follow the progress of a bar that displays progression of a status</h5>
+            </section>
 
-            <div class="toast hidden" id="toast">Form Submitted Successfully!</div>
+            <section class="test-section">
+                <h1><a href="playgroundElements/modal.html">Modals</a></h1>
+                <h5>A pop-up element, also known as a dialog box or overlay, that sits on top of the main application
+                    window. </h5>
+            </section>
 
-        </section>
+            <section class="test-section">
+                <h1><a href="playgroundElements/dynamicID.html">Dynamic IDs</a></h1>
+                <h5>Locating elements not based off of ids can sometimes be difficult</h5>
+            </section>
 
-        <section class="test-section">
-            <h2>Dynamic Table</h2>
-            <table id="data-table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Dropdown</th>
-                        <th>Checkbox</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </section>
+            <section class="test-section">
+                <h1><a href="playgroundElements/classAttributes.html">Class Attributes</a></h1>
+                <h5>Elements have certain attributes which can help in identifying the element or verifying it</h5>
+            </section>
 
-        <section class="test-section">
-            <h2>Accordion</h2>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <button class="accordion-header">Item 1</button>
-                    <div class="accordion-content">
-                        <p>This is the content of item 1.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <section class="test-section">
+                <h1><a href="playgroundElements/">Hidden layers</a></h1>
+                <h5>Verify user cannot not interact with elements that are invisible or hidden</h5>
+            </section>
 
-        <section class="test-section">
-            <h2>Progress Bar</h2>
-            <div class="progress-container">
-                <div id="progress-bar" class="progress-bar"></div>
-            </div>
-            <button class="btn primary" id="update-progress">Update Progress</button>
-        </section>
+            <section class="test-section">
+                <h1><a href="playgroundElements/">Delayed Processes</a></h1>
+                <h5>Wait for a process to finish before executing more code / continuing test</h5>
+            </section>
 
-        <section class="test-section">
-            <h2>Modal Popup</h2>
+            <section class="test-section">
+                <h1><a href="playgroundElements/">Element Clicks</a></h1>
+                <h5>There are many things that can happen when a user clicks on an element</h5>
+            </section>
 
-            <button class="btn primary" id="open-modal">Open Modal</button>
+            <section class="test-section">
+                <h1><a href="playgroundElements/">Inputs</a></h1>
+                <h5>Entering data into an input, or hidden inputs</h5>
+            </section>
 
-            <div id="modal" class="modal-container hidden">
-                <div class="modal-content">
-                    <p id="modal-message">Justin was here.</p>
-                    <button class="btn secondary" id="close-modal">Close</button>
-                </div>
-            </div>
+            <section class="test-section">
+                <h1><a href="playgroundElements/">Scrollbars</a></h1>
+                <h5>Users should be able to use scroll bars, and they should scroll.</h5>
+            </section>
 
-        </section>
+            <section class="test-section">
+                <h1><a href="playgroundElements/">Text</a></h1>
+                <h5>Either verifying an element contains text or text is visible on the screen</h5>
+            </section>
 
+            <section class="test-section">
+                <h1><a href="playgroundElements/">Visibility</a></h1>
+                <h5>Multiple scenarios where an element might be visible or not</h5>
+            </section>
+
+            <section class="test-section">
+                <h1><a href="playgroundElements/">Mouse Hover</a></h1>
+                <h5>Verify when I hover over an element certain behaviors happen on screen</h5>
+            </section>
+
+            <section class="test-section">
+                <h1><a href="playgroundElements/">Overlapped elements</a></h1>
+                <h5>Elements may be overlapped by other elements, usually happens with inputs</h5>
+            </section>
+
+            <section class="test-section">
+                <h1><a href="playgroundElements/">Alerts</a></h1>
+                <h5>Verify a certain alert pops onto screen when a user takes specific actions</h5>
+            </section>
+        </div>
     </main>
 
     <footer>
